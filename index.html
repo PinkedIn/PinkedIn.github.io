@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PinkedIn RSS Feed Generator</title>
+    <style>
+      div {
+        margin: 5px 5px 5px 5px;
+      }
+      div.directions {
+        display: block;
+        text-align: right;
+        width: 500px;
+        font-style: italic;
+      }
+      label {
+        display: inline-block;
+        text-align: right;
+        width: 140px;
+      }
+  </style>
+  </head>
+  <body>
+    <form method="GET" action="https://pinkedin-rss.herokuapp.com/feed">
+      <div>
+        <label for="keywords">Keywords:</label>
+        <input name="keywords" type="text" placeholder="Sanitation Engineer" value="Sanitation Engineer" />
+      </div>
+      <div>
+        <label for="alignment">Political Alignment:</label>
+        <label style="display: inline">
+          <input type="radio" name="alignment" value="left" />
+          Left
+        </label>
+        <label style="display: inline">
+          <input type="radio" name="alignment" value="right" checked />
+          Right
+        </label>
+      </div>
+      <div>
+        <label for="tele">Telecommute?</label>
+        <label style="display: inline">
+          <input type="radio" name="tele" value="remote" checked />
+          Remote
+        </label>
+        <label style="display: inline">
+          <input type="radio" name="tele" value="office" />
+          In-Office
+        </label>
+      </div>
+      <div>
+        <h4>Location (optional for "Remote"):</h4>
+      </div>
+      <div>
+        <div class="directions">(prefix with "Greater" if including suburbs)</div>
+        <label for="city">City:</label>
+        <input name="city" type="text" placeholder="Greater Miami" />
+      </div>
+      <div>
+        <div class="directions">(full name, not abbreviation)</div>
+        <label for="state">State/Province:</label>
+        <input name="state" type="text" placeholder="Florida" />
+      </div>
+      <div>
+        <div class="directions">(full name, not abbreviation)</div>
+        <label for="country">Country:</label>
+        <input name="country" type="text" placeholder="United States" />
+      </div>
+      
+      <div class="directions">
+        <input type="submit" value="Generate RSS feed" />
+      </div>
+    </form>
+  </body>
+</html>
