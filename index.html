@@ -1,74 +1,256 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PinkedIn RSS Feed Generator</title>
-    <style>
-      div {
-        margin: 5px 5px 5px 5px;
-      }
-      div.directions {
-        display: block;
-        text-align: right;
-        width: 500px;
-        font-style: italic;
-      }
-      label {
-        display: inline-block;
-        text-align: right;
-        width: 140px;
-      }
-  </style>
-  </head>
-  <body>
-    <form method="GET" action="https://pinkedin-rss.herokuapp.com/feed">
-      <div>
-        <label for="keywords">Keywords:</label>
-        <input name="keywords" type="text" placeholder="Sanitation Engineer" value="Sanitation Engineer" />
-      </div>
-      <div>
-        <label for="alignment">Political Alignment:</label>
-        <label style="display: inline">
-          <input type="radio" name="alignment" value="left" />
-          Left
-        </label>
-        <label style="display: inline">
-          <input type="radio" name="alignment" value="right" checked />
-          Right
-        </label>
-      </div>
-      <div>
-        <label for="tele">Telecommute?</label>
-        <label style="display: inline">
-          <input type="radio" name="tele" value="remote" checked />
-          Remote
-        </label>
-        <label style="display: inline">
-          <input type="radio" name="tele" value="office" />
-          In-Office
-        </label>
-      </div>
-      <div>
-        <h4>Location (optional for "Remote"):</h4>
-      </div>
-      <div>
-        <div class="directions">(prefix with "Greater" if including suburbs)</div>
-        <label for="city">City:</label>
-        <input name="city" type="text" placeholder="Greater Miami" />
-      </div>
-      <div>
-        <div class="directions">(full name, not abbreviation)</div>
-        <label for="state">State/Province:</label>
-        <input name="state" type="text" placeholder="Florida" />
-      </div>
-      <div>
-        <div class="directions">(full name, not abbreviation)</div>
-        <label for="country">Country:</label>
-        <input name="country" type="text" placeholder="United States" />
-      </div>
-      
-      <div class="directions">
-        <input type="submit" value="Generate RSS feed" />
-      </div>
-    </form>
-  </body>
+	<head>
+		<title>Parallel Economy - Job Search Alerts</title>
+		<style>
+			/* form */
+			div {
+				margin: 5px 5px 5px 5px;
+			}
+			div.directions {
+				display: block;
+				text-align: right;
+				width: 500px;
+				font-style: italic;
+			}
+			label {
+				display: inline-block;
+				text-align: right;
+				width: 140px;
+			}
+
+			/* links */
+			a:link {color: Goldenrod}
+			a:visited {color: OliveDrab}
+			a:hover, a:active {color: PaleGoldenrod}
+
+			/* table */
+			.table {display:table; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)}
+			.row {display:table-row; margin: 0; padding: 0}
+			.cell {display:table-cell; margin: 0; padding: 0}
+
+			/* buttons */
+			.small.awesome {font-size:11px}
+			.green.awesome {background-color:OliveDrab}
+			a.green.awesome {color:PaleGoldenrod}
+			a.green.awesome:hover, a.green.awesome.active {color:LightGoldenrodYellow}
+			.gold.awesome {background-color:Goldenrod}
+			a.gold.awesome {color:LightGoldenrodYellow}
+			a.gold.awesome:hover, a.green.awesome.active {color:White}
+			.awesome{
+				background: #222 url(overlay.png) repeat-x;
+				display: inline-block;
+				padding: 5px 10px 6px;
+				color: #fff;
+				text-decoration: none;
+				font-weight: bold;
+				line-height: 1;
+				border-radius: 5px;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+				-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+				-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+				text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+				border-bottom: 1px solid rgba(0,0,0,0.25);
+				position: relative;
+				cursor: pointer;
+			}
+
+			/* faq */
+			.margin-lr-100 {margin: 0 100px 0 100px}
+			h2 {color:Goldenrod}
+			h3 {color:Gold}
+			h2, h3 {text-shadow: -1px 0 Grey, 0 1px Goldenrod, 1px 0 Goldenrod, 0 -1px Grey}
+		</style>
+	</head>
+	<body bgcolor="OliveDrab">
+
+		<br /><br />
+
+		<div class="table" style="margin:auto; width:80%; background-color:Cornsilk">
+			<div class="row" style="height:160px; overflow: hidden;">
+				<div class="cell" style="width:158px; height:160px; background-image:url('border-nw.gif')">
+					&nbsp;
+				</div>
+				<div class="cell" style="background-image:url('border-n.gif'); background-repeat: repeat-x; height: 160px">
+					&nbsp;
+				</div>
+				<div class="cell" style="width:158px; height:160px; background-image:url('border-ne.gif')">
+					&nbsp;
+				</div>
+			</div>
+			<div class="row">
+				<div class="cell" style="background-image:url('border-w.gif'); background-repeat:repeat-y; width:160px">
+					&nbsp;
+				</div>
+				<div class="cell">
+
+					<div style="text-align: center">
+						<br /><br />
+						<img src="tree.png" width="422" height="500" style="width:50%; height:inherit" />
+						<br /><br />
+						<img src="pe_text.gif" width="770px" style="width: 85%" />
+						<br /><br />
+					</div>
+
+					<br /><br />
+
+					<div style="margin:auto; width:600px">
+						<form method="GET" action="https://pinkedin-rss.herokuapp.com/feed">
+							<fieldset>
+								<legend style="font-size: 1.8em;">Set up job alerts for:</legend>
+								<div>
+									<label for="keywords">Keywords:</label>
+									<input name="keywords" type="text" placeholder="Sanitation Engineer" value="Sanitation Engineer" />
+								</div>
+								<div>
+									<label for="alignment">Political Alignment:</label>
+									<label style="display: inline">
+									<input type="radio" name="alignment" value="left" />
+									Left
+									</label>
+									<label style="display: inline">
+									<input type="radio" name="alignment" value="right" checked />
+									Right
+									</label>
+								</div>
+								<div>
+									<label for="tele">Telecommute?</label>
+									<label style="display: inline">
+										<input type="radio" name="tele" value="remote" checked />
+										Remote
+									</label>
+									<label style="display: inline">
+										<input type="radio" name="tele" value="office" />
+										In-Office
+									</label>
+								</div>
+								<div>
+									<h4>Location (optional if "Remote" selected):</h4>
+								</div>
+								<div>
+									<div class="directions">(prefix with "Greater" if including suburbs)</div>
+									<label for="city">City:</label>
+									<input name="city" type="text" placeholder="Greater Miami" />
+								</div>
+								<div>
+									<div class="directions">(full name, not abbreviation)</div>
+									<label for="state">State/Province:</label>
+									<input name="state" type="text" placeholder="Florida" />
+								</div>
+								<div>
+									<div class="directions">(full name, not abbreviation)</div>
+									<label for="country">Country:</label>
+									<input name="country" type="text" placeholder="United States" />
+								</div>
+
+								<br />
+
+								<div class="directions">
+									Notification options:
+									<a class="awesome green" id="previewLink" href="#" onclick="setPreviewHref();">Preview results...</a><br />
+								</div>
+								<div class="directions">
+									<a class="awesome green" href="javascript:;" onclick="document.forms[0].submit(); return false;">Generate RSS feed</a>
+								</div>
+								<div class="directions">
+									<label for="email">Email:</label>
+									<input name="email" id="email" type="text" placeholder="email@mailinator.com" />
+									&nbsp;
+									<a class="awesome green" id="emailLink" href="#" onclick="return setEmailHref();">Get email alerts</a>
+								</div>
+
+								<br />
+
+								<div class="directions">
+									Become an early adopter and get a Lifetime Premium account:
+									<a class="awesome gold" href="https://paypal.me/paralleleconomy">Donate $10 for Early Adopter status</a>
+								</div>
+								<br />
+							</fieldset>
+						</form>
+					</div>
+
+					<br />
+
+					<div style="text-align:center">
+						<a href="javascript:toggle('faq');">faq</a> | 
+						<a href="javascript:;" id="contact">contact</a>
+					</div>
+
+					<div style="display:none" class="margin-lr-100" id="faq">
+						<h2>FAQ</h2>
+						<h3>What is this?</h3>
+						<p>This is a service for subscribing to alerts for job postings that match your search criteria, from companies that match your political alignment.</p>
+						<h3>Where is this for?</h3>
+						<p>Any country, but city-level resolution for political alignment is US-only (for now).</p>
+						<h3>How is this working?</h3>
+						<p>We try to identify the company and look up its political donations; if we can't identify the company, we use the city/state/country of the flagship and the political donations of that locale.</p>
+						<h3>Why is this?</h3>
+						<p>A recent survey says the following: 1) Over half of workplaces put agenda ahead of profit; 2) The biggest predictor of workplace cohesion/productivity/morale is a strong sense of common purpose. You should be able to feel good about who your work is enriching, and feel good about being part of the group (for the 50% of your life you spend working).</p>
+						<h3>Who is this?</h3>
+						<p>A Fortune 50 ESG corporation demanded I declare my religion and to quote the religious ruling that precludes me from taking experimental gene therapy rather than HCQ/IVM, in order to be exempt. They fired me the next day. (And no, I don't have the money to fight corporate lawyers.) While looking for my current job, I wrote this website to help me in my job search. I hope I can help you too.</p>
+						<h3>When is this from?</h3>
+						<p>Ha ha. I know how to write "modern" bloated single-page applications in Angular/React/jQuery. It doesn't matter if a site is "reactive" if it requires an initial massive CPU/RAM/network spike for dozens of API calls which don't execute in parallel, themselves handed off to microservices that hand off to other microservices. (Not to mention these obnoxious heartbeat timers and metrics tracking requests executing once per second). Do these bootcamp graduates bandwagoning on the latest JS framework not know what "abandonment rate" is? This entire site comes in at 60KB of parallel GET requests for cached static content; a mobile GPU renders it instantaneously. Moreover: Unemployed people donate the little they have with the understanding that I'm going to aggressively minimize hosting costs. I take that responsibility very seriously.</p>
+						<h3>Do you accept crypto?</h3>
+						<p>I accept PayPal, which supports crypto (and everything else). I accept donations only to defray hosting costs. I run this at a loss. If I get in excess, I plan to use it to add a feature to surface hidden unadvertised job opportunities.</p>
+						<h3>I want to try this, but I don't know you; I have privacy concerns.</h3>
+						<p>My promise to you: I can't and don't "harvest your data". If you subscribe to get email alerts, I don't know your email, it's just a link to a 3rd party service that I have no affilation with. (You can also take the RSS feed link we generate and sign up for email alerts with the service of your choosing.) In the future, you'll need to supply your email in the search form only to identify yourself as a Premium account.</p>
+					</div>
+
+					<br />
+
+				</div>
+				<div class="cell" style="background-image:url('border-e.gif'); background-repeat:repeat-y; width:160px">
+					&nbsp;
+				</div>
+			</div>
+			<div class="row">
+				<div class="cell" style="width:160px">
+					<img src="border-sw.gif" width="160" height="160" />
+				</div>
+				<div class="cell" style="background-image:url('border-s.gif'); background-repeat: repeat-x">
+					&nbsp;
+				</div>
+				<div class="cell">
+					<img src="border-se.gif" width="160" height="160" />
+				</div>
+			</div>
+		</div>
+
+		<br /><br />
+
+		<script type="text/javascript">
+			let contact = (123563833125996..toString(16) + 1701602659..toString(16)).match(/.{1,2}/g).reduce((acc,char)=>acc+String.fromCharCode(parseInt(char, 16)),"") + '@' + 'protonmail' + '.' + 'com';
+			document.getElementById('contact').setAttribute('href', 'mai' + 'lto:' + contact);
+			function toggle(id) {
+				let elem = document.getElementById(id);
+				elem.setAttribute('style', 'display:' + (elem.getAttribute('style').indexOf('none') === -1 ? 'none' : 'block'));
+			}
+			function getQueryParamUrl() {
+				let params = [];
+				let form = document.forms[0];
+				for (let i = 0; i < form.elements.length; i++) {
+					let e = form.elements[i];
+					if (e.name) params.push(encodeURIComponent(e.name) + "=" + encodeURIComponent(e.value));
+				}
+				return form.action + '?' + params.join("&");
+			}
+			function setEmailHref() {
+				let url = getQueryParamUrl();
+				let email = document.getElementById('email').value;
+				if (!email) return false;
+				document.getElementById('emailLink').setAttribute('href',
+					'https://blogtrottr.com/subverify/?schedule=6&url=' + encodeURIComponent(url) +
+					'&email=' + encodeURIComponent(email));
+				return true;
+			}
+			function setPreviewHref() {
+				let url = getQueryParamUrl();
+				document.getElementById('previewLink').setAttribute('href', url + "&preview=1");
+			}
+		</script>
+
+	</body>
 </html>
