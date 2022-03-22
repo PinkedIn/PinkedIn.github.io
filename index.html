@@ -233,7 +233,9 @@
 				let form = document.forms[0];
 				for (let i = 0; i < form.elements.length; i++) {
 					let e = form.elements[i];
-					if (e.name) params.push(encodeURIComponent(e.name) + "=" + encodeURIComponent(e.value));
+					if (!e.name) continue;
+					if (e.type === 'radio' && !e.checked) continue;
+					params.push(encodeURIComponent(e.name) + "=" + encodeURIComponent(e.value));
 				}
 				return form.action + '?' + params.join("&");
 			}
